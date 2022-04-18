@@ -1,30 +1,116 @@
+<!-- Calculo imc -->
 <meta charset="UTF-8">
 
 <script>
-  function pulaLinha() {
+  /* function pulaLinha() {
     document.write("<br><br>");
   }
-
 
   function mostra(frase) {
     document.write(frase);
     pulaLinha();
   }
 
-
   function calculaImc(peso, altura) {
     var imc = peso / (altura * altura);
-    mostra("O imc calculado : " + imc)
+    return imc;
+  }
 
+  var imcDoni = calculaImc(68, 1.68);
+  var imcAmigo = calculaImc(72, 1.72);
+
+  mostra(imcAmigo)
+  mostra(imcDoni) */
+
+
+
+  //Retornando um valor específico
+  var codigo = geraCodigo("A", 20, 30);
+  document.write(codigo); // mostrou GH1022
+
+  function geraCodigo(letra, numero1, numero2) {
+    return "GH1022<br>";
   }
 
 
-  var pesoDoni = 68;
-  var alturaDoni = 1.68;
-  calculaImc(pesoDoni, alturaDoni);
+  //Retornando um valor específico
+  function funcaoQualquer() {
 
-  var pesoAmigo = 72;
-  var alturaAmigo = 1.68;
-  calculaImc(pesoAmigo, alturaAmigo);
+    var n1 = 10;
+    var n2 = 20;
+    var n3 = 30;
+    return n2;
+  }
+  var retorno = funcaoQualquer();
+  document.write(retorno + "<br>");
 
+
+  // Olha o cálculo do IMC novamente!
+
+  /*  function pulaLinha() {
+          document.write("<br>");
+      }
+  
+      function mostra(frase) {
+          document.write(frase);
+          pulaLinha();
+      }
+  
+      function calculaImc(altura, peso) {
+  
+          return peso / (altura * altura);
+      }
+  
+      var imcDoni = calculaImc(1.77, 75);
+      var imcFlavio= calculaImc(1.77, 75);
+      var totalImc = imcDoni+imcFlavio;
+      mostra("Som dos IMC é : " + totalImc); */
+
+
+  //Entendendo a fundo retorno de funções
+
+
+
+
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  function calculaImc(altura, peso) {
+
+    return peso / (altura * altura);
+  }
+
+  var nome = prompt("Informe o seu nome: ");
+  var alturaInformada = prompt(nome + ", informe sua altura:");
+  var pesoInformado = prompt(nome + ", informe seu peso:");
+
+  var imc = calculaImc(alturaInformada, pesoInformado);
+
+  document.write(nome + ", o seu IMC calculado é: " + imc);
+
+
+
+
+
+//  Lendo do teclado!
+function pulaLinha() {
+
+document.write("<br>");
+}
+
+function mostra(frase) {
+document.write(frase);
+pulaLinha();
+}
+
+var numero1 = prompt("Digite o primeiro número");
+var numero2 = prompt("Digite o segundo número");
+
+mostra("<br>O valor de " + numero1 + " vezes " + numero2 + " é: " + (numero1 * numero2));
 </script>

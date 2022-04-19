@@ -73,12 +73,14 @@
 
 
   function pulaLinha() {
-    document.write("<br>");
+    document.write("<br><br>");
   }
 
   function mostra(frase) {
     document.write(frase);
     pulaLinha();
+   
+
   }
 
   function calculaImc(altura, peso) {
@@ -92,25 +94,34 @@
 
   var imc = calculaImc(alturaInformada, pesoInformado);
 
-  document.write(nome + ", o seu IMC calculado é: " + imc);
+  mostra(nome + ", o seu IMC calculado é: " + imc);
+
+  if (imc < 18.5) {
+    mostra("Você esta abaixo da média  recomendada que é: 18.5");
+  }
+
+  if (imc > 35) {
+    mostra("Seu imc esta acima da média recomendada que é: 35");
+  }
+
+  if (imc >= 18.5 && imc <= 35) {
+    mostra("Seu imc esta entre 18.5 é 35 estão na média aceitavel");
+  }
 
 
-
-
-
-//  Lendo do teclado!
-function pulaLinha() {
-
-document.write("<br>");
-}
-
-function mostra(frase) {
-document.write(frase);
-pulaLinha();
-}
-
-var numero1 = prompt("Digite o primeiro número");
-var numero2 = prompt("Digite o segundo número");
-
-mostra("<br>O valor de " + numero1 + " vezes " + numero2 + " é: " + (numero1 * numero2));
+  /* //  Lendo do teclado!
+  function pulaLinha() {
+  
+  document.write("<br>");
+  }
+  
+  function mostra(frase) {
+  document.write(frase);
+  pulaLinha();
+  }
+  
+  var numero1 = prompt("Digite o primeiro número");
+  var numero2 = prompt("Digite o segundo número");
+  
+  mostra("<br>O valor de " + numero1 + " vezes " + numero2 + " é: " + (numero1 * numero2)); */
 </script>

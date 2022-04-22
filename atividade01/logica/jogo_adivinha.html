@@ -53,63 +53,64 @@
     } */
 
 
-/* //PODE DIRIGIR
+  /* //PODE DIRIGIR
+    function pulaLinha() {
+      document.write("<br>");
+    }
+  
+    function mostra(frase) {
+      document.write(frase);
+      pulaLinha();
+    }
+  
+    var idade = parseInt(prompt("Qual é sua idade?"));
+    var temCarteira = prompt("Tem carteira? Responda S ou N");
+  
+    if (idade >= 18 && temCarteira == "S") {
+      mostra("Pode dirigir! ");
+    } else {
+      mostra(idade + ", anos não pode dirigir!");
+    } */
+
+
+
+
   function pulaLinha() {
+
     document.write("<br>");
   }
 
   function mostra(frase) {
+
     document.write(frase);
     pulaLinha();
   }
 
-  var idade = parseInt(prompt("Qual é sua idade?"));
-  var temCarteira = prompt("Tem carteira? Responda S ou N");
+  function sorteia(n) {
 
-  if (idade >= 18 && temCarteira == "S") {
-    mostra("Pode dirigir! ");
-  } else {
-    mostra(idade + ", anos não pode dirigir!");
-  } */
+    return Math.round(Math.random() * n);
+  }
 
+  var numeroPensado = sorteia(3);
 
-
-
-    function pulaLinha() {
-
-        document.write("<br>");
-    }
-
-    function mostra(frase) {
-
-        document.write(frase);
-        pulaLinha();
-    }
-
-    function sorteia(n) {
-
-        return Math.round(Math.random() * n);
-    }    
-
-    var numeroPensado = sorteia(10);
-
-
-     var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
-
-    if(chute == numeroPensado) {
-
-        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+  
+  let tentativas = 1;
+  while (tentativas <= 3) {
+    var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+    if (chute == numeroPensado) {
+      mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+      break;
     } else {
-
-        if(chute > numeroPensado) {
-
-            mostra("Você errou! Seu chute é maior que o número pensado!");
-
-        } else {
-
-            mostra("Você errou! Seu chute é menor que o número pensado!");
-        }
-
+      if (chute > numeroPensado) {
+        mostra("Você errou! Seu chute é MAIOR que o número pensado!");
+      } else {
+        mostra("Você errou! Seu chute é MENOR que o número pensado!");
+      }
+      tentativas++;
     }
+   
+  }
+
+
 
 </script>

@@ -1,30 +1,81 @@
 <meta charset="UTF-8">
-<input />
-<button>Compare com meu segredo</button>
+
+<input/>
+<button>Compare com o meu segredo</button>
+
 <script>
+    function sorteia() {
 
-  let segredos = [5, 7, 10, 2, 3];
+       return Math.round(Math.random() * 10);
 
-  let input = document.querySelector("input");
-  input.focus();
-
-  function verifica() {
-    let achou = false;
-    for (let posicao = 0; posicao < segredos.length; posicao++) {
-      if (input.value == segredos[posicao]) {
-
-        alert("Voce acertou");
-        achou = true;
-        break;
-      }
     }
-    if(achou ==false){
-    alert("Você errou!");
+
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+              var numeroAleatorio = sorteia();
+              var achou = false;
+
+              if (numeroAleatorio !== 0) {
+                     for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+                           if(segredos[posicao] == numeroAleatorio){
+                                achou = true;
+                                break;
+                           }
+
+                     }
+
+                     if (achou == false) {
+                           segredos.push(numeroAleatorio);
+                           numero++;
+                     }
+              }
+
+        }
+
+        return segredos;
+
     }
-    input.value = "";
+
+    var segredos = sorteiaNumeros(3);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
     input.focus();
-  }
 
-  let button = document.querySelector("button");
-  button.onclick = verifica;
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
 </script>

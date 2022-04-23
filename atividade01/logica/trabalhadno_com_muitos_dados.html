@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+<h1>Receitas do Yan</h1>
+<script>
+/* //Meu código nunca é executado?
+let parcelas = [10.40, 40.00, 100.18, 200];
+for (let i = 0; i < parcelas.length; i = i + 1) {
+  document.write(parcelas[i]);
+}
+document.write("FIM");
+
+
+//Ih, fiquei de fora!
+let jogadores = ["Saladino", "Cage", "Xur", "Rayson"];
+for (let i = 0; i < jogadores.length; i++) {
+
+  alert(jogadores[i]);
+} */
+
+//Estranho no ninho!
+/* let letras = ['A', 'B', 'C', 'D'];
+
+for( let i = 0; i < letras.length; i++ ) {
+    alert(letras[i]);
+}
+ */
+
+//Não existe ingrediente repetido aqui!
+
+
+
+
+
+
+let ingredientes = [];
+
+let quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+let contador = 1;
+
+while( contador <= quantidade) {
+
+    let ingrediente = prompt("Informe o ingrediente " + contador);
+
+    let existe = false;
+
+    for( let posicao = 0; posicao < ingredientes.length; posicao++) {
+
+        if( ingredientes[posicao] == ingrediente) {
+
+            existe = true;
+            break;
+        }
+    }
+
+    if( existe == false) {
+
+        ingredientes.push(ingrediente);
+        contador++;
+    }
+}
+
+console.log(ingredientes);
+
+</script>

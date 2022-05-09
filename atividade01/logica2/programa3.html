@@ -1,30 +1,40 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
-
-  function desenhaQuadrado(x, y, cor) {
-
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
 
-    pincel.fillStyle = cor;
-    pincel.fillRect(x, y, 50, 50);
-    pincel.strokeStyle = 'black';
-    pincel.strokeRect(x, y, 50, 50);
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
 
-  }
+    var cores = ['blue', 'red', 'green']
+    var indiceCorAtual = 0; // começa com blue
 
-  /*  let x = 0;
-   while (x < 600) {
-     desenhaQuadrado(x, 0, "green");
-     desenhaQuadrado(x, 50, "red");
-     desenhaQuadrado(x, 100, "yellow");
-     x = x + 50;
-   } */
+    function desenhaCirculo(evento) {
 
-  for (let x = 0; x < 600; x = x + 50) {
-    desenhaQuadrado(x, 0, "green");
-  }
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = cores[indiceCorAtual];
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
 
+    }
+
+    tela.onclick = desenhaCirculo;
+
+    function mudaCor() {
+
+        indiceCorAtual++;
+
+        if(indiceCorAtual >= cores.length) {
+            indiceCorAtual = 0; // volta para a primeira cor, azul
+        }
+
+        return false; // para não exibir o menu padrão do canvas
+    }
+
+    tela.oncontextmenu = mudaCor;
 
 </script>

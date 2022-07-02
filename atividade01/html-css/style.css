@@ -9,10 +9,12 @@ body {
 .principal{
 	background: #CCCCCC;
 	padding: 30px;
+		text-align: center;
 }
 
 h1 {
 	text-align: center
+	
 }
 
 p {
@@ -32,7 +34,7 @@ em strong {
 }
 
 .beneficios {
-	background: #FFFFFF;
+  background: rgba(87, 1, 144, 0.733);
 	padding: 20px;
 }
 

@@ -25,6 +25,10 @@ nav a{
   text-decoration: none;
   
 }
+nav a:hover{
+  color:rgba(87, 1, 144, 0.733);
+  text-decoration:underline;
+}
 
 .produtos{
   width: 940px;

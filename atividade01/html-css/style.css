@@ -4,7 +4,7 @@ body{
 }
 
 header{
-  background: purple;
+  background:#531373;
   padding:  20px 0;
 }
 .caixa{
@@ -126,7 +126,7 @@ form label, form legend{
 }
 
 .enviar:hover{
-  background: rgb(111, 4, 187);
+  background: #3b0e51;
   transform: scale(1.2);
   transform: rotate();
 }
@@ -201,7 +201,7 @@ td, th{
 
 .benefícios{
   padding: 3em 0;
-  background: rgb(176, 76, 149);
+  background: purple
 }
 .conteudo-beneficios{
   width: 640px;
@@ -227,12 +227,19 @@ td, th{
 
 .imagem-beneficios{
   width: 60%;
+  opacity: 0.9;
+  box-shadow: 10px 10px 5px #000000;
+  clear:left;
   
 }
 
 .mapa{
   padding: 3em 0;
-  background: linear-gradient(purple,rgb(176, 76, 149));
+  background: linear-gradient(#4e126a,purple);
+}
+
+.imagem-beneficios:hover{
+  opacity: 1;
 }
 
 .mapa-conteudo {
@@ -246,7 +253,7 @@ td, th{
   text-align: center;
 }
 .video{
-  width: 560px;
+  width: 460px;
   margin: 2em auto;
 }
 
@@ -255,3 +262,20 @@ Selecionar qualquer coisa
 .principal p:not(#missao){
   background: orange;
 } */
+
+
+@media screen and (max-width: 480px) { 
+  .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+      width: auto;
+  }
+}
+h1{
+  text-align: center;
+}
+nav{
+  position: static;
+}
+.lista-beneficios, .imagem-beneficios{
+  width: 100%;
+}
+

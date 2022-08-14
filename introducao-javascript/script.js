@@ -3,17 +3,46 @@
 // console.log(titulo);
 // console.log("titulo.textContent");
 
-let paciente = document.querySelector("#primeiro-paciente");
+let pacientes = document.querySelectorAll(".paciente");
+console.log(pacientes.length);
 
-let tdPeso = paciente.querySelector(".info-peso");
-let peso = tdPeso.textContent;
+for (let i = 0; i < pacientes.length; i++) {
+	let paciente = pacientes[i];
+	let tdPeso = paciente.querySelector(".info-peso");
+	let peso = tdPeso.textContent;
 
-let tdAltura = paciente.querySelector(".info-altura");
-let altura =tdAltura.textContent;
+	let tdAltura = paciente.querySelector(".info-altura");
+	let altura = tdAltura.textContent;
 
-let imc = peso / (altura*altura);
+	let tdImc = paciente.querySelector(".info-imc");
 
-console.log(imc);
-console.log(tdAltura);
-console.log(tdPeso);
-console.log(paciente);
+	let pesoEhvalido = true;
+	let alturaEhValida = true;
+
+
+	if (peso < 0 || peso > 1000) {
+		console.log("Peso invalido")
+		pesoEhvalido = false;
+		tdImc.textContent = "Peso inválido";
+	}
+
+	if (altura < 0 || altura > 3.00) {
+		console.log("altura invalida")
+		alturaEhValida = false;
+		tdAltura.textContent = "Altura inválida";
+	}
+
+
+
+	if (alturaEhValida && pesoEhvalido) {
+		let imc = peso / (altura * altura);
+		tdImc.textContent = imc.toFixed(2);
+
+	}
+
+}
+
+
+
+
+

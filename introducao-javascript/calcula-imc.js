@@ -37,3 +37,10 @@ for (let i = 0; i < pacientes.length; i++) {
         tdImc.textContent = imc.toFixed(2);
     }
 }
+
+
+function calculaImc(peso, altura) {
+    let imc = 0;
+    imc = peso / (altura * altura);
+    return imc.toFixed(2);
+}
